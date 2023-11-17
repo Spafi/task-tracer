@@ -9,6 +9,6 @@ import 'primeflex/primeflex.css';
 
 export default function App() {
     return <PrimeReactProvider>
-        <></>
+        <>Test for netlify</>
     </PrimeReactProvider>
 }
