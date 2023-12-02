@@ -1,0 +1,10 @@
+
+.task-list-container {
+    min-height: 500px;
+    width: 100%;
+    display: flex;
+    max-height: 700px;
+    flex-direction: row;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "id": "user_2WlVz244MOZFywWfxrdocQcfcIG",
+      "firstName": "Cristian",
+      "lastName": "Spafiu",
+      "fullName": "Cristian Spafiu",
+      "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yV2xWejR5aGNDMEJmWFcxbE9jcThNUThEcUYifQ",
+      "email": "spafiii@gmail.com"
+    },
+    {
+      "id": "user_2Wm3qhuljpJVwQNmQCQVFm8Uyhc",
+      "firstName": "",
+      "lastName": "",
+      "fullName": "",
+      "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18yV2VUQTlPM09XOFdWWWxiZEhLVVQ4T1ZqRmgiLCJyaWQiOiJ1c2VyXzJXbTNxaHVsanBKVndRTm1RQ1FWRm04VXloYyJ9",
+      "email": "vamiwos770@dixiser.com"
+    }
+  ],
+  "tasks": []
+}

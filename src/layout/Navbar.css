@@ -1,0 +1,46 @@
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: end;
+    color: var(--app-text-color);
+}
+
+.user-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 6px 10px;
+    border-radius: 15px;
+    cursor: default;
+}
+
+
+.sign-in-button {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 0;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-color);
+    box-shadow: 5px 5px 10px var(--background-accent-dark),
+    -5px -5px 10px var(--background-accent-light);
+    cursor: pointer;
+}
+
+.sign-in-button:hover {
+    border-radius: 64px;
+    background: var(--background-color);
+    box-shadow: inset 5px 5px 10px var(--background-accent-dark),
+    inset -5px -5px 10px var(--background-accent-light);
+}
+
+.sign-in-button i {
+    color: var(--primary-color)
+}

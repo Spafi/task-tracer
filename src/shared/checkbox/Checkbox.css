@@ -1,0 +1,81 @@
+.checkbox-container {
+    width: 26px;
+    height: 26px;
+    overflow: hidden;
+    border-radius: 19px;
+    background: linear-gradient(145deg, var(--background-color), var(--background-accent));
+    box-shadow: 3px 3px 5px var(--background-accent-dark),
+    -3px -3px 5px var(--background-accent-light);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-container:hover {
+
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    width: 100%;
+    height: 100%;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-container:has(> input:checked) {
+    color: var(--primary-color);
+    border-radius: 50px;
+}
+
+
+.checkmark svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: var(--gray-400);
+    stroke-width: 1.5;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+}
+
+.checkmark svg path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+}
+
+.checkmark svg polyline {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+}
+
+.checkmark:hover svg {
+    stroke: var(--primary-color);
+}
+
+input:checked + .checkmark svg {
+    stroke: var(--primary-color);
+}
+
+input:checked + .checkmark svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+}
+
+input:checked + .checkmark svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+}

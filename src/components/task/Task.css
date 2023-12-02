@@ -1,0 +1,201 @@
+/* TASK */
+.task-container {
+    border-radius: 15px;
+    background: var(--background-color);
+    box-shadow: 10px 10px 7px var(--background-accent-dark),
+    -10px -10px 7px var(--background-accent-light);
+    height: 100px;
+    overflow: hidden;
+    margin: 0;
+    left: 0;
+    top: 0;
+}
+
+
+/* END TASK */
+
+/* TASK-CONTENT */
+.task-actions {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.expanded-task {
+    transition: all 0.5s;
+}
+
+.closed-task {
+    transition: all 0.5s;
+}
+
+.severity {
+    position: absolute;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    top: 0;
+}
+
+.important {
+    background-image: linear-gradient(to bottom, var(--red-800), var(--red-500));
+    box-shadow: 0 1px 2px var(--red-800),
+    0 -1px 2px var(--red-500)
+}
+
+.important-only-text {
+    color: var(--red-500);
+}
+
+.regular {
+    background-image: linear-gradient(to bottom, var(--blue-800), var(--blue-500));
+    box-shadow: 0 1px 2px var(--blue-800),
+    0 -1px 2px var(--blue-500)
+}
+
+.regular-only-text {
+    color: var(--blue-500);
+}
+
+.low {
+    background-image: linear-gradient(to bottom, var(--green-800), var(--green-500));
+    box-shadow: 0 1px 2px var(--green-800),
+    0 -1px 2px var(--green-500)
+}
+
+.low-only-text {
+    color: var(--green-500);
+}
+
+.task-details {
+    color: var(--app-text-color);
+    margin: 0;
+    padding: 10px 5px 5px 5px;
+}
+
+.action-button {
+    opacity: .7;
+}
+
+.action-button:hover {
+    opacity: 1;
+}
+
+.task-content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.white-break {
+    white-space: normal;
+}
+
+/* ACTION BUTTONS */
+.action-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.action-button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-color);
+    box-shadow: 5px 5px 10px var(--background-accent-dark),
+    -5px -5px 10px var(--background-accent-light);
+    cursor: pointer;
+}
+
+.action-button:hover {
+    border-radius: 64px;
+    background: var(--background-color);
+    box-shadow: inset 5px 5px 10px var(--background-accent-dark),
+    inset -5px -5px 10px var(--background-accent-light);
+}
+
+.open-task {
+    height: 200px;
+}
+
+.out {
+    animation: out-right 0.5s 1 normal forwards;
+}
+
+@keyframes out-right {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translate(620px, 10px);
+    }
+}
+
+
+/* CALENDAR */
+.p-datepicker {
+    background: var(--background-color);
+    color: var(--app-text-color);
+    font-size: 0.875rem;
+
+}
+
+.calendar input {
+    background: var(--background-color);
+    color: var(--app-text-color);
+    font-size: 0.875rem;
+}
+
+.p-datepicker-header {
+    background: var(--background-color);
+    padding: 10px;
+    color: var(--app-text-color);
+}
+
+.p-datepicker-trigger {
+    color: var(--app-text-color);
+}
+
+.calendar .p-inputtext::placeholder {
+    color: var(--app-text-color);
+    padding-left: 5px;
+}
+
+
+/* DROPDOWN */
+.option {
+    background: var(--background-color);
+    color: var(--app-text-color);
+    padding: 5px 5px 5px 0;
+    font-size: 0.875rem;
+}
+
+.p-dropdown-label {
+    font-size: 0.875rem;
+    color: var(--app-text-color);
+}
+
+.severity-dropdown .p-dropdown-label {
+    padding: 5px;
+}
+
+.option:hover {
+    background: var(--background-accent-dark);
+}
+
+.selected-option {
+    padding: 0;
+    font-size: 0.875rem;
+}
