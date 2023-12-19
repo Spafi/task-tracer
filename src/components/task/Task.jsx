@@ -20,7 +20,7 @@ export const taskStates = {
     EXPIRED    : 'EXPIRED'
 }
 
-export default function Task({ task, handleDeleteClick, handleSaveClick }) {
+export default function Task({ task, handleDeleteClick, handleSaveClick, handleCompleteClick }) {
     const [ taskDetails, setTaskDetails ] = useState( task )
     const [ isEditing, setIsEditing ] = useState( false )
     const [ isDeleted, setIsDeleted ] = useState( false )
@@ -92,6 +92,12 @@ export default function Task({ task, handleDeleteClick, handleSaveClick }) {
         handleSaveClick( taskDetails )
     }
 
+    function onCompleteClick(isChecked) {
+        const updatedStatus = isChecked ? taskStates.DONE : taskStates.IN_PROGRESS
+        setTaskDetails( { ...taskDetails, status: updatedStatus } )
+        handleCompleteClick( { ...taskDetails, status: updatedStatus } )
+    }
+
     function onDeleteClick() {
         setIsDeleted( true )
         deleteAfterAnimation()
@@ -109,12 +115,15 @@ export default function Task({ task, handleDeleteClick, handleSaveClick }) {
             <div className={ `task-container grid ${ isEditing ? 'open-task expanded-task' : 'closed-task' } ${ isDeleted ? ' out' : '' }` }>
                 <div className={ `task-actions col-2` }>
                     <div className={ `severity ${ displaySeverityColor( taskDetails.severity ) }` }></div>
-                    <Checkbox className={ 'checkbox' }/>
+                    <Checkbox value={ taskDetails.status==taskStates.DONE }
+                              className={ 'checkbox' }
+                              onChecked={ onCompleteClick }/>
                 </div>
                 <div className='task-details col-9 flex flex-column justify-content-between pr-3'>
                     <div>
                         <div className='title mb-2 text-lg font-semibold'>
-                            { !isEditing && task.title }
+                            { !isEditing &&
+                                    <span className={ `${ taskDetails.status===taskStates.DONE ? 'strikethrough' : '' }` }>{ task.title }</span> }
                             { isEditing && <InputText placeholder={ `${ task.title ? task.title : 'Title' }` }
                                                       defaultValue={ task.title }
                                                       className='w-full bg-transparent text-lg font-semibold'
@@ -152,7 +161,9 @@ export default function Task({ task, handleDeleteClick, handleSaveClick }) {
                                     className="bg-transparent severity-dropdown"
                           /> }
                         { !isEditing ?
-                          <div><p className='text-xs'> { new Date( task.dueDate )?.toDateString() ?? '' }</p></div> :
+                          <div>
+                              <p className={ `${ new Date( task.dueDate ) >= new Date( Date.now() ) ? 'text-red' : '' } 'text-xs'` }> { new Date( task.dueDate )?.toDateString() ?? '' }</p>
+                          </div> :
                           <Calendar value={ new Date( taskDetails.dueDate ) }
                                     onChange={ (e) => setTaskDetails( { ...taskDetails, dueDate: e.value } ) }
                                     showIcon

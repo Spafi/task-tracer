@@ -15,7 +15,71 @@
       "fullName": "",
       "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18yV2VUQTlPM09XOFdWWWxiZEhLVVQ4T1ZqRmgiLCJyaWQiOiJ1c2VyXzJXbTNxaHVsanBKVndRTm1RQ1FWRm04VXloYyJ9",
       "email": "vamiwos770@dixiser.com"
+    },
+    {
+      "id": "user_2Z4mhFZ1wzyoAucQscOZZ40KxIx",
+      "firstName": "Voxel",
+      "lastName": "Stew",
+      "fullName": "Voxel Stew",
+      "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yWjRtaEg2NmtTSm5DTXFKdnNydzIwN1VjZHYifQ",
+      "email": "voxel.stew.yum@gmail.com"
     }
   ],
-  "tasks": []
+  "tasks": [
+    {
+      "userId": "user_2WlVz244MOZFywWfxrdocQcfcIG",
+      "createdAt": "2023-12-04T11:00:51.731Z",
+      "severity": "REGULAR",
+      "title": "Walk the dog",
+      "content": "this needs no explanation   sdss",
+      "status": "IN_PROGRESS",
+      "order": 0,
+      "dueDate": "2023-12-20T11:00:51.731Z",
+      "id": 1
+    },
+    {
+      "userId": "user_2Z4mhFZ1wzyoAucQscOZZ40KxIx",
+      "createdAt": "2023-12-04T11:37:43.590Z",
+      "severity": "IMPORTANT",
+      "title": "An important task",
+      "content": "I need to do this quick!",
+      "status": "IN_PROGRESS",
+      "order": 1,
+      "dueDate": "2023-12-28T11:37:43.590Z",
+      "id": 3
+    },
+    {
+      "userId": "user_2Z4mhFZ1wzyoAucQscOZZ40KxIx",
+      "createdAt": "2023-12-04T11:37:59.581Z",
+      "severity": "REGULAR",
+      "title": "A regular task",
+      "content": "Maybe i'll do this tomorrow...",
+      "status": "IN_PROGRESS",
+      "order": 2,
+      "dueDate": "2023-12-06T11:37:59.581Z",
+      "id": 4
+    },
+    {
+      "userId": "user_2WlVz244MOZFywWfxrdocQcfcIG",
+      "createdAt": "2023-12-19T21:37:11.526Z",
+      "severity": "REGULAR",
+      "title": "sfsdfdf",
+      "content": "bbb",
+      "status": "IN_PROGRESS",
+      "order": 1,
+      "dueDate": "2023-12-19T21:37:11.526Z",
+      "id": 5
+    },
+    {
+      "userId": "user_2WlVz244MOZFywWfxrdocQcfcIG",
+      "createdAt": "2023-12-19T23:28:11.817Z",
+      "severity": "LOW",
+      "title": "hfh",
+      "content": "fghgh",
+      "status": "IN_PROGRESS",
+      "order": 2,
+      "dueDate": "2023-12-19T23:28:11.817Z",
+      "id": 6
+    }
+  ]
 }

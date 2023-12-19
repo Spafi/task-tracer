@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { deleteTask, getSortedFilteredTasks, saveTask } from "./TasksService.js";
 import { useUser } from "@clerk/clerk-react";
 import { severitiesOptions, taskStates } from "../task/Task.jsx";
+import Search from "../search/Search.jsx";
+import * as _ from "lodash-es";
 
 export default function Tasks() {
 
@@ -68,15 +70,46 @@ export default function Tasks() {
         setTasks( tasksWithNewTask )
     }
 
+    async function handleCompleteTask(completedTask) {
+        const updatedTask = await saveTask( completedTask )
+        const tasksWithNewTask = tasks.map( t => t.id===updatedTask.id ? updatedTask : t )
+        setTasks( tasksWithNewTask )
+    }
+
+    async function onFilter(searchValue) {
+        if ( !searchValue ) {
+            await getTasks( user.id, sort, order, filter )
+            return
+        }
+        const mergedTasks = []
+        const filters = [ `title_like=${ searchValue }`, `content_like=${ searchValue }` ]
+        for ( const filter1 of filters ) {
+            const filteredTasks = await getSortedFilteredTasks( user.id, sort, order, filter1 )
+            mergedTasks.push( ...filteredTasks )
+        }
+
+        return _.uniqBy( mergedTasks, 'id' );
+    }
+
+
+    async function onFiltering(searchValue) {
+        const mergedTasks = await onFilter( searchValue )
+        mergedTasks && setTasks( mergedTasks )
+    }
+
     return (
-            <div className='w-full max-w-30rem card border-round-3xl'>
-                <TaskList tasks={ tasks }
-                          onDeleteTask={ handleDeleteTask }
-                          onDragEnd={ handleDragEnd }
-                          onSaveTask={ handleSaveTask }/>
-                <div className='add-task-container'>
-                    <AppButton icon='bi bi-plus' handleClick={ onAddTaskClick }/>
+            <>
+                <Search handleInput={ onFiltering }/>
+                <div className='w-full max-w-30rem card border-round-3xl'>
+                    <TaskList tasks={ tasks }
+                              onDeleteTask={ handleDeleteTask }
+                              onCompleteTask={ handleCompleteTask }
+                              onDragEnd={ handleDragEnd }
+                              onSaveTask={ handleSaveTask }/>
+                    <div className='add-task-container'>
+                        <AppButton icon='bi bi-plus' handleClick={ onAddTaskClick }/>
+                    </div>
                 </div>
-            </div>
+            </>
     )
 }

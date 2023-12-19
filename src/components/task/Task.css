@@ -199,3 +199,11 @@
     padding: 0;
     font-size: 0.875rem;
 }
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.text-red {
+    color: red;
+}

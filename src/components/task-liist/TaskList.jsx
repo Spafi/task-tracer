@@ -3,7 +3,7 @@ import './TaskList.css';
 import Task from "../task/Task.jsx";
 import { StrictModeDroppable } from "../../shared/drag-n-drop/StrictModeDroppable.jsx";
 
-export default function TaskList({ tasks, onDeleteTask, onDragEnd, onSaveTask }) {
+export default function TaskList({ tasks, onDeleteTask, onDragEnd, onSaveTask, onCompleteTask }) {
 
     return (
             <div className='task-list-container max-w-30rem p-4'>
@@ -25,6 +25,7 @@ export default function TaskList({ tasks, onDeleteTask, onDragEnd, onSaveTask })
                                                         >
                                                             <Task task={ task }
                                                                   handleDeleteClick={ onDeleteTask }
+                                                                  handleCompleteClick={ onCompleteTask }
                                                                   handleSaveClick={ onSaveTask }/>
                                                         </div>
                                                 ) }
