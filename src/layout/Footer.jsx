@@ -7,6 +7,6 @@ export default function Footer() {
     const period = currentYear===startYear ? startYear.toString() : `${ startYear } - ${ currentYear }`
 
     return <div className='flex align-items-center justify-content-center'>
-        <p>© { period } <Link to='https://github.com/Spafi'>Constantin</Link></p>
+        <p>© { period } <Link to='https://github.com'>Constantin</Link></p>
     </div>
 }
